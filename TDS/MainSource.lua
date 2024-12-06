@@ -1097,9 +1097,9 @@ task.spawn(function()
 	UI.PlayerInfo.Gems = PlayerInfoUI:Section(`Gems: {LocalPlayer:WaitForChild("Gems").Value}`)
 	UI.PlayerInfo.Triumphs = PlayerInfoUI:Section(`Wins: {LocalPlayer:WaitForChild("Triumphs").Value}`)
 	UI.PlayerInfo.Loses = PlayerInfoUI:Section(`Loses: {LocalPlayer:WaitForChild("Loses").Value}`)
-	UI.PlayerInfo.TimescaleTickets = PlayerInfoUI:Section(`TimescaleTickets: {LocalPlayer:WaitForChild("TimescaleTickets").Value}`)
-	UI.PlayerInfo.ReviveTickets = PlayerInfoUI:Section(`ReviveTickets: {LocalPlayer:WaitForChild("ReviveTickets").Value}`)
-	UI.PlayerInfo.SpinTickets = PlayerInfoUI:Section(`SpinTickets: {LocalPlayer:WaitForChild("SpinTickets").Value}`)
+	UI.PlayerInfo.TimescaleTickets = PlayerInfoUI:Section(`Timescale Tickets: {LocalPlayer:WaitForChild("TimescaleTickets").Value}`)
+	UI.PlayerInfo.ReviveTickets = PlayerInfoUI:Section(`Revive Tickets: {LocalPlayer:WaitForChild("ReviveTickets").Value}`)
+	UI.PlayerInfo.SpinTickets = PlayerInfoUI:Section(`Spin Tickets: {LocalPlayer:WaitForChild("SpinTickets").Value}`)
 	UI.PlayerInfo.Property = {
 		["Level"] = LocalPlayer.Level.Value,
 		["Experience"] = LocalPlayer.Experience.Value,

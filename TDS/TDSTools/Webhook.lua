@@ -7,8 +7,6 @@ local Stats = Info.stats
 local Rewards = Info:WaitForChild("rewards")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Executor = identifyexecutor and identifyexecutor() or "???"
-local UtilitiesConfig = StratXLibrary.UtilitiesConfig
-local PlayerInfo = StratXLibrary.UI.PlayerInfo.Property
 
 local CommaText = function(string)
 	local String = tostring(string):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
@@ -20,7 +18,7 @@ local TimeFormat = function(string)
 end
 local function CheckTower()
 	local str = ""
-	local TowerInfo = {}
+	local TowerInfo = StratXLibrary.TowerInfo or {}
 	for i,v in next, TowerInfo do
 		str = `{str}\n{v[3]}: {v[2]}`
 	end
