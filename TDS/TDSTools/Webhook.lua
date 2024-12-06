@@ -252,7 +252,7 @@ for i , v in next, Rewards:GetChildren() do
 	end
 end
 
-Embed.AddField("----------------- PLAYER INFO ---------------","")
+Embed.AddField("----------------- PLAYER INFO ---------------","", false)
 Embed.AddField("Username:", (UtilitiesConfig.Webhook.HideUser and "Anonymous") or LocalPlayer.Name)
 Embed.AddField("Display Name:", (UtilitiesConfig.Webhook.HideUser and "Anonymous") or LocalPlayer.DisplayName)
 Embed.AddField("Executor Used:", Executor)
@@ -265,7 +265,7 @@ Embed.AddField("Exp:", CommaText(PlayerInfo.Experience).." :star:")
 Embed.AddField("Spin Tickets:", CommaText(PlayerInfo.SpinTickets).." :tickets:")
 Embed.AddField("Revive Tickets:", CommaText(PlayerInfo.ReviveTickets).." :ticket:")
 Embed.AddField("Timescale Tickets:", CommaText(PlayerInfo.TimescaleTickets).." :tickets:")
-Embed.AddField("----------------- TROOPS INFO ---------------", "```m\n"..CheckTower().."```")
+Embed.AddField("----------------- TROOPS INFO ---------------", "```m\n"..CheckTower().."```", false)
 
 if #UtilitiesConfig.Webhook.Link ~= 0 then
 	getgenv().SendCheck = Webhook:Send()
