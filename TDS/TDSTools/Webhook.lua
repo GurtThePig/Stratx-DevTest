@@ -7,6 +7,8 @@ local Stats = Info.stats
 local Rewards = Info:WaitForChild("rewards")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Executor = identifyexecutor and identifyexecutor() or "???"
+local UtilitiesConfig = StratXLibrary.UtilitiesConfig
+local PlayerInfo = StratXLibrary.UI.PlayerInfo.Property
 
 local CommaText = function(string)
 	local String = tostring(string):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
