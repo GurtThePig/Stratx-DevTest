@@ -770,11 +770,11 @@ if CheckPlace() then
 			task.wait(1)
 			local PlayerInfo = StratXLibrary.UI.PlayerInfo
 			local GetRewardInfo = CheckReward()
-			--PlayerInfo.Property[GetGameState():GetAttribute("Won") and "Triumphs" or "Loses"] += 1
-			--PlayerInfo.Property[GetRewardInfo[1]] += GetRewardInfo[2]
-			for i,v in next, PlayerInfo.Property do
+			PlayerInfo.Property[MatchGui:WaitForChild("banner"):WaitForChild("textLabel").Text == "TRIUMPH!" and "Triumphs" or "Loses"] += 1
+			PlayerInfo.Property[GetRewardInfo[1]] += GetRewardInfo[2]
+			--[[for i,v in next, PlayerInfo.Property do
 				PlayerInfo[i].Text = `{i}: {v}`
-			end
+			end]]
 			if UtilitiesConfig.Webhook.Enabled then
 				task.spawn(function()
 					loadstring(game:HttpGet(MainLink.."TDSTools/Webhook.lua", true))()
@@ -1092,6 +1092,7 @@ UI.PlayerInfo.UI = maintab:DropSection("Player Info")
 local PlayerInfoUI = UI.PlayerInfo.UI
 task.spawn(function()
 	UI.PlayerInfo.Level = PlayerInfoUI:Section(`Level: {LocalPlayer:WaitForChild("Level").Value}`)
+	UI.PlayerInfo.Experience = PlayerInfoUI:Section(`Experience: {LocalPlayer:WaitForChild("Experience").Value}`)
 	UI.PlayerInfo.Coins = PlayerInfoUI:Section(`Coins: {LocalPlayer:WaitForChild("Coins").Value}`)
 	UI.PlayerInfo.Gems = PlayerInfoUI:Section(`Gems: {LocalPlayer:WaitForChild("Gems").Value}`)
 	UI.PlayerInfo.Triumphs = PlayerInfoUI:Section(`Wins: {LocalPlayer:WaitForChild("Triumphs").Value}`)
@@ -1101,6 +1102,7 @@ task.spawn(function()
 	UI.PlayerInfo.SpinTickets = PlayerInfoUI:Section(`SpinTickets: {LocalPlayer:WaitForChild("SpinTickets").Value}`)
 	UI.PlayerInfo.Property = {
 		["Level"] = LocalPlayer.Level.Value,
+		["Experience"] = LocalPlayer.Experience.Value,
 		["Coins"] = LocalPlayer.Coins.Value,
 		["Gems"] = LocalPlayer.Gems.Value,
 		["Triumphs"] = LocalPlayer.Triumphs.Value,
