@@ -254,6 +254,9 @@ if isfile("StrategiesX/TDS/UserConfig/UtilitiesConfig.txt") then
 	if tonumber(getgenv().DefaultCam) and tonumber(getgenv().DefaultCam) <= 3 then
 		UtilitiesConfig.Camera = tonumber(getgenv().DefaultCam)
 	end
+	if #tostring(getgenv().WebhookLink) ~= 0 then
+		UtilitiesConfig.Webhook.Link = tostring(getgenv().WebhookLink)
+	end
 	if type(getgenv().PotatoPC) == "boolean" then
 		UtilitiesConfig.LowGraphics = getgenv().PotatoPC
 	end
