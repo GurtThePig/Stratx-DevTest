@@ -184,16 +184,12 @@ return function(self, p1)
 				["Playing"] = v:GetAttribute("Players"),
 				["Mode"] = ElevatorType,
 			})]]
-            local ElevatorType = v:GetAttribute("Type")
-            if not Elevators[ElevatorType] then
-                Elevators[ElevatorType] = {}
-            end
-            table.insert(Elevators[ElevatorType],{
+            table.insert(Elevators[v:GetAttribute("Type")],{
 				["Object"] = v,
 				["Map"] = v:GetAttribute("Map"),
 				["Timer"] = v:GetAttribute("Timer"),
 				["Players"] = v:GetAttribute("Players"),
-				["Mode"] = ElevatorType,
+				["Mode"] = v:GetAttribute("Type"),
             })
         end
         --prints("Found",#Elevators,"Elevators")
