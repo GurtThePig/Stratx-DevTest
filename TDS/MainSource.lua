@@ -300,7 +300,7 @@ function SaveUtilitiesConfig()
 		Webhook = {
 			Enabled = WebSetting.flags.Enabled or false,
 			UseNewFormat = WebSetting.flags.UseNewFormat or false,
-			Link = (#WebSetting.flags.Link ~= 0 and WebSetting.flags.Link) or ((getgenv().WebhookLink and tostring(getgenv().WebhookLink) ~= nil) and tostring(getgenv().WebhookLink)) or "",
+			Link = (#WebSetting.flags.Link ~= 0 and WebSetting.flags.Link) or if (getgenv().WebhookLink and tostring(getgenv().WebhookLink) ~= nil) then tostring(getgenv().WebhookLink) else "",
 			HideUser = WebSetting.flags.HideUser or false,
 			PlayerInfo = if type(WebSetting.flags.PlayerInfo) == "boolean" then WebSetting.flags.PlayerInfo else true,
 			GameInfo = if type(WebSetting.flags.GameInfo) == "boolean" then WebSetting.flags.GameInfo else true,
@@ -530,7 +530,7 @@ if not UtilitiesConfig.BypassGroup then
 			maintab:Section("Paradoxum Games Group")
 			local JoinButton = maintab:DropSection("Join The Group")
 			JoinButton:Button("Copy Link Group", function()
-				setclipboard("https://www.roblox.com/groups/4914494/Paradoxum-Games")
+				setclipboard("https://www.roblox.com/communities/4914494/Paradoxum-Games")
 			end)
 			JoinButton:Button("Continue To Use Script", function()
 				BypassGroup = true
@@ -545,7 +545,7 @@ else
 end
 prints("Group Checking Completed")
 maintab:Button("Join Server For More Strat",function()
-	setclipboard("https://discord.gg/WACYcNzKpd")
+	setclipboard("https://discord.gg/RWGUGV3YTj")
 end)
 maintab:Section(Version)
 maintab:Section(`Current Place: {CheckPlace() and "Ingame" or "Lobby"}`)
